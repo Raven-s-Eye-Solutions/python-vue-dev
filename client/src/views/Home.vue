@@ -1,10 +1,11 @@
 <template>
   <div class="home">
     <Header />
-        <p v-if="!error" class='pt-2 text-center text-success'>
-          {{!time ? 'Loading...' : `Server time: ${time}`}}
-        </p>
-        <p v-if="error" class='pt-2 text-center text-error'>{{error}}</p>
+    <p
+      v-if="!error"
+      class="pt-2 text-center text-success"
+    >{{!time ? 'Loading...' : `Server time: ${time}`}}</p>
+    <p v-if="error" class="pt-2 text-center text-error">{{error}}</p>
   </div>
 </template>
 
@@ -24,7 +25,7 @@ export default {
     };
   },
   methods: {
-    async fetchTime () {
+    async fetchTime() {
       const response = await fetch("/current-time");
       if (response.ok) {
         const data = await response.json();
@@ -35,7 +36,7 @@ export default {
           this.time = date;
         }
       } else {
-       this.error = response.statusText;
+        this.error = response.statusText;
       }
     },
   },
