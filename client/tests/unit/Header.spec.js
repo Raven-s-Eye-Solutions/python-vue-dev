@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import Header from '@/components/Header.vue';
+import Header from '@/Components/Header.vue';
 
 describe('Header.vue', () => {
   it('renders the component (shallow snapshot)', () => {

@@ -11,7 +11,7 @@
 
 <script>
 // @ is an alias to /src
-import Header from "@/components/Header.vue";
+import Header from "@/Components/Header.vue";
 
 export default {
   name: "Home",
@@ -29,12 +29,10 @@ export default {
       const response = await fetch("/current-time");
       if (response.ok) {
         const data = await response.json();
-        if (data.time) {
-          const date = new Date();
-          date.setTime(data.time * 1000);
-          date.toUTCString();
-          this.time = date;
-        }
+        const date = new Date();
+        date.setTime(data.time * 1000);
+        date.toUTCString();
+        this.time = date;
       } else {
         this.error = response.statusText;
       }

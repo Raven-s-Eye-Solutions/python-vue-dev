@@ -1,8 +1,8 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Home from '@/pages/Home.vue';
+import Router from 'vue-router';
+import Home from '@/Pages/Home.vue';
 
-Vue.use(VueRouter);
+Vue.use(Router);
 
 const routes = [
   {
@@ -12,7 +12,7 @@ const routes = [
   },
 ];
 
-const router = new VueRouter({
+const router = new Router({
   routes,
 });
 
