@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import Home from '@/views/Home.vue';
+import Home from '@/pages/Home.vue';
 import Header from '@/components/Header.vue';
 
 describe('Home.vue', () => {
