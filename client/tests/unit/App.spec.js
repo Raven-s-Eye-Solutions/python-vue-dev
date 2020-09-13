@@ -1,14 +1,11 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
-import VueRouter from 'vue-router';
+import { shallowMount } from '@vue/test-utils';
 import App from '@/App.vue';
-
-const localVue = createLocalVue();
-localVue.use(VueRouter);
-const router = new VueRouter();
 
 describe('App.vue', () => {
   it('renders the component (shallow snapshot)', () => {
-    const wrapper = shallowMount(App, localVue, router);
+    const wrapper = shallowMount(App, {
+      stubs: ['router-link', 'router-view'],
+    });
     expect(wrapper).toMatchSnapshot();
   });
 });
